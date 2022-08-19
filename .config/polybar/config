@@ -44,7 +44,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 
-border-size = 17
+border-size = 0
 ;border-color = #FFC0CB
 border-color = #00000000
 
@@ -64,8 +64,8 @@ font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:pixelsize=13;1
 
 modules-left = i3 xwindow
-modules-center = 
-modules-right = filesystem xkeyboard cpu memory temperature pulseaudio eth date powermenu
+modules-center = date
+modules-right = filesystem xkeyboard cpu memory temperature pulseaudio eth powermenu
 
 #modules-right = filesystem xbacklight pulseaudio xkeyboard temperature memory cpu eth date powermenu
 
@@ -373,15 +373,15 @@ label-disconnected-foreground = #900902
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
-date =
+date = " %d-%m-%Y"
 date-alt = " %d-%m-%Y"
 
-time = %H:%M
-time-alt = %H:%M:%S
+time = | %H:%M:%S
+time-alt = | %H:%M:%S
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.primary}
 
 
@@ -412,13 +412,18 @@ bar-volume-foreground-8 = #FFC0CB
 bar-volume-gradient = false
 bar-volume-indicator =
 bar-volume-indicator-font = 2
-;bar-volume-fill = ─
-bar-volume-fill = █
+#bar-volume-fill = ─
+#bar-volume-fill = █
 bar-volume-fill-font = 2
-;bar-volume-empty = ─
-bar-volume-empty = █
+#bar-volume-empty = ─
+#bar-volume-empty = █
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = #add8e6
+
+bar-volume-fill =  	▰   
+bar-volume-empty =  ▱ 
+#bar-volume-fill = ▶    
+#bar-volume-empty = ▷     
 
 [module/alsa]
 type = internal/alsa
